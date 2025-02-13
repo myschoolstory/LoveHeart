@@ -3,34 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LoveHeart - Web Unblocker</title>
+    <title>LoveHeart - Modern Web Unblocker</title>
     <link rel="stylesheet" href="/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <div class="logo">
-                <span class="heart">❤️</span> LoveHeart
-            </div>
-        </div>
-        
-        <div class="search-container">
-            <form id="proxyForm">
-                <input type="text" id="url" 
-                       placeholder="Enter website URL" 
-                       autocomplete="off">
-                <button type="submit">Unblock</button>
-            </form>
-        </div>
+        <header>
+            <img src="/assets/logo.svg" alt="LoveHeart Logo" class="logo">
+            <h1>LoveHeart</h1>
+        </header>
 
-        <div class="footer">
-            <p>Privacy-first web access · Powered by Ultraviolet</p>
-        </div>
+        <main>
+            <div class="search-box">
+                <input type="text" id="urlInput" placeholder="Enter URL or search term...">
+                <select id="switcher">
+                    <option value="">-- Connection Type --</option>
+                    <option value="epoxy">Epoxy (Recommended)</option>
+                    <option value="bare">Bare</option>
+                </select>
+            </div>
+
+            <iframe id="contentFrame" class="content-frame"></iframe>
+        </main>
     </div>
 
+    <!-- Required UV scripts -->
     <script src="/uv/uv.bundle.js"></script>
     <script src="/uv/uv.config.js"></script>
-    <script src="/js/app.js"></script>
+    <script src="/baremux/index.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>

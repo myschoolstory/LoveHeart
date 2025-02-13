@@ -1,40 +1,27 @@
 import express from 'express';
-import { createBareServer } from '@tomphttp/bare-server-node';
-import { uvPath } from '@titaniumnetwork-dev/ultraviolet';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { createServer } from 'http';
+import { Server } from 'ws';
+import bareServer from '@tomphttp/bare-server-node';
+import wispServer from 'wisp-server-node';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const bare = createBareServer('/bare/');
 const app = express();
+const httpServer = createServer(app);
 
-// Serve static files
-app.use(express.static(join(__dirname, 'public')));
-app.use('/uv/', express.static(uvPath));
+app.use(express.static('public'));
 
-// UV middleware
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', '*');
-  next();
+// Setup Bare server
+bareServer.setup({
+  port: 3001,
+  host: 'localhost'
 });
 
-// Handle 404
-app.use((req, res) => {
-  res.status(404).sendFile(join(__dirname, 'public', '404.html'));
+// Setup Wisp server
+const wisp = wispServer({
+  port: 3002,
+  host: 'localhost',
+  key: 'your-secret-key-here' // Change this!
 });
 
-const server = express();
-const PORT = process.env.PORT || 3000;
-
-server.on('request', (req, res) => {
-  if (bare.shouldRoute(req)) {
-    bare.routeRequest(req, res);
-  } else {
-    app(req, res);
-  }
-});
-
-server.listen(PORT, () => {
-  console.log(`LoveHeart running on port ${PORT}`);
+app.listen(8080, () => {
+  console.log('LoveHeart server running on port 8080');
 });
