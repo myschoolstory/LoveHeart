@@ -6,6 +6,31 @@ body {
     color: #00ff00;
     font-family: 'Courier New', Courier, monospace;
 }
+ 
+/* Disclaimer styling */
+.terminal-disclaimer {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    background: rgba(0, 20, 0, 0.9);
+    font-size: 0.9em;
+}
+
+.terminal-disclaimer p {
+    margin: 0 0 10px 0;
+    color: #00ff00;
+}
+
+.terminal-disclaimer ul {
+    margin: 0;
+    padding-left: 20px;
+    color: #00aa00;
+}
+
+.terminal-disclaimer li {
+    margin: 5px 0;
+}
 
 /* Terminal container */
 .terminal-container {
