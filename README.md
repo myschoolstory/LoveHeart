@@ -32,6 +32,9 @@ A speeding proxy for bypassing internet censorship.
 
 4.  Open your web browser and navigate to `http://localhost:3000`
 
+##Docker
+Our docker build image is available both on the Github container registry AND the [official Docker registry](https://hub.docker.com/r/browservm/loveheart).
+
 ## License
 
 BSD 3-Clause
