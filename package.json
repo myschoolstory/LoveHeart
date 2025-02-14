@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chemicaljs/fancy-example.git"
+    "url": "git+https://github.com/browser-vm/LoveHeart.git"
   },
   "author": "BrowserVM & Nebelung",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chemicaljs/fancy-example/issues"
+    "url": "https://github.com/browser-vm/LoveHeart/issues"
   },
-  "homepage": "https://github.com/chemicaljs/fancy-example#readme",
+  "homepage": "https://github.com/browser-vm/LoveHeart#readme",
   "dependencies": {
     "chemicaljs": "^2.6.4",
     "express": "^4.21.2"
