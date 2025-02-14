@@ -1,36 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LoveHeart - Modern Web Unblocker</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Secure browsing through LoveHeart Proxy" />
+    <title>LoveHeart Proxy</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/chemical.js"></script>
+    <script src="/chemical.components.js"></script>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <img src="/assets/logo.svg" alt="LoveHeart Logo" class="logo">
-            <h1>LoveHeart</h1>
+<body class="terminal-body">
+    <div class="terminal-container">
+        <header class="terminal-header">
+            <span class="terminal-title">LoveHeart Proxy v1.0</span>
+            <span class="terminal-status">[Connected]</span>
         </header>
 
-        <main>
-            <div class="search-box">
-                <input type="text" id="urlInput" placeholder="Enter URL or search term...">
-                <select id="switcher">
-                    <option value="">-- Connection Type --</option>
-                    <option value="epoxy">Epoxy (Recommended)</option>
-                    <option value="bare">Bare</option>
-                </select>
+        <main class="terminal-content">
+            <div class="prompt">
+                <span class="username">proxy</span>
+                <span class="at-symbol">@loveheart</span>
+                <span class="cursor">$</span>
             </div>
 
-            <iframe id="contentFrame" class="content-frame"></iframe>
+            <input 
+                type="text"
+                autofocus
+                spellcheck="false"
+                autocomplete="off"
+                id="search"
+                data-frame="web"
+                data-auto-https
+                data-search-engine="https://www.google.com/search?q=%s"
+                placeholder="Enter URL or search term..."
+                is="chemical-input"
+                class="terminal-input"
+            />
+
+            <nav class="terminal-nav">
+                <button onclick="chemical.componentAction('back', 'web')" class="terminal-btn">⇠ Back</button>
+                <button onclick="chemical.componentAction('forward', 'web')" class="terminal-btn">Forward ⇢</button>
+                <button onclick="chemical.componentAction('reload', 'web')" class="terminal-btn">↻ Reload</button>
+                <button onclick="chemical.componentAction('close', 'web')" class="terminal-btn danger">✕ Close</button>
+            </nav>
+
+            <div class="terminal-output">
+                <iframe 
+                    id="web" 
+                    data-controls="controls" 
+                    is="chemical-iframe"
+                    class="terminal-frame"
+                ></iframe>
+            </div>
         </main>
     </div>
-
-    <!-- Required UV scripts -->
-    <script src="/uv/uv.bundle.js"></script>
-    <script src="/uv/uv.config.js"></script>
-    <script src="/baremux/index.js"></script>
-    <script src="/js/main.js"></script>
 </body>
 </html>

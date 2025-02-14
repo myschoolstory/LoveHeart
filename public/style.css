@@ -1,0 +1,147 @@
+/* Base styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Terminal container */
+.terminal-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+    background: rgba(0, 20, 0, 0.9);
+    position: relative;
+    min-height: 600px;
+}
+
+/* Terminal header */
+.terminal-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 255, 0, 0.2);
+}
+
+.terminal-title {
+    font-size: 1.2em;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.terminal-status {
+    color: #00aa00;
+}
+
+/* Prompt styling */
+.prompt {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.username {
+    color: #00ff00;
+}
+
+.at-symbol {
+    color: #00aa00;
+}
+
+.cursor {
+    animation: blink 1s infinite;
+    margin-left: 5px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Input styling */
+.terminal-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #00ff00;
+    color: #00ff00;
+    padding: 10px;
+    font-family: inherit;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.terminal-input:focus {
+    outline: none;
+    border-bottom-color: #00ff00;
+    box-shadow: 0 0 5px #00ff00;
+}
+
+/* Navigation buttons */
+.terminal-nav {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.terminal-btn {
+    background: transparent;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.terminal-btn:hover {
+    background: rgba(0, 255, 0, 0.1);
+    box-shadow: 0 0 10px #00ff00;
+}
+
+.danger {
+    border-color: #ff0000;
+    color: #ff0000;
+}
+
+.danger:hover {
+    background: rgba(255, 0, 0, 0.1);
+    box-shadow: 0 0 10px #ff0000;
+}
+
+/* Output frame */
+.terminal-output {
+    position: relative;
+    height: calc(100vh - 250px);
+    overflow: hidden;
+}
+
+.terminal-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: rgba(0, 20, 0, 0.9);
+}
+
+/* CRT screen effect */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    z-index: 999;
+}
