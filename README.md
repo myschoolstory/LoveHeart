@@ -34,4 +34,4 @@ A speeding proxy for bypassing internet censorship.
 
 ## License
 
-MIT
+BSD 3-Clause
