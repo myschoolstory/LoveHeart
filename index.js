@@ -2,6 +2,22 @@ import { ChemicalServer } from "chemicaljs";
 import express from "express";
 import WebTorrent from 'webtorrent';
 
+const client = new WebTorrent({
+  tracker: {
+    iceServers: [
+      {
+        urls: [
+          'stun:stun.l.google.com:19302',
+          'stun:stun1.l.google.com:19302',
+          'stun:stun2.l.google.com:19302',
+          'stun:stun3.l.google.com:19302',
+          'stun:stun4.l.google.com:19302'
+        ]
+      }
+    ]
+  }
+});
+
 const [app, listen] = new ChemicalServer({
   bypassDownloads: true,
   downloadMimeTypes: [
@@ -14,14 +30,11 @@ const [app, listen] = new ChemicalServer({
   ]
 });
 
-// Initialize WebTorrent client
-const client = new WebTorrent();
-
 // Add endpoint for torrent downloads
 app.post('/torrent', express.json(), (req, res) => {
   const { magnetUri } = req.body;
   
-  client.add(magnetUri, (torrent) => {
+  client.add(magnetUri, { announceList: [] }, (torrent) => {
     torrent.on('done', () => {
       console.log('Torrent download finished');
     });
