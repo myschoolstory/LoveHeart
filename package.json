@@ -19,7 +19,6 @@
   "homepage": "https://github.com/browser-vm/LoveHeart#readme",
   "dependencies": {
     "chemicaljs": "^2.6.4",
-    "express": "^4.21.2",
-    "webtorrent": "^2.1.37"
+    "express": "^4.21.2"
   }
 }

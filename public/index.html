@@ -45,13 +45,6 @@
             </nav>
 
             <div class="terminal-output">
-                <input 
-                    type="text"
-                    id="torrent"
-                    placeholder="Enter magnet URI to download via WebTorrent..."
-                    class="terminal-input"
-                />
-                <button onclick="startTorrent()" class="terminal-btn">Download Torrent</button>
                 <iframe 
                     id="web" 
                     data-controls="controls" 
@@ -71,15 +64,7 @@
         </ul>
     </div>
     <script>
-    async function startTorrent() {
-      const magnetUri = document.getElementById('torrent').value;
-      const res = await fetch('/torrent', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ magnetUri })
-      });
-      const data = await res.json();
-      console.log('Torrent started:', data);
+    async function startTorrent() {      
     }
     </script>
 </body>
