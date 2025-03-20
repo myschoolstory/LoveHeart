@@ -5,6 +5,7 @@ body {
     background-color: #000;
     color: #00ff00;
     font-family: 'Courier New', Courier, monospace;
+    cursor: url('/cursor.svg'), auto;
 }
  
 /* Disclaimer styling */
@@ -98,6 +99,7 @@ body {
     font-family: inherit;
     font-size: 1.1em;
     margin-bottom: 20px;
+    cursor: text;
 }
 
 .terminal-input:focus {
@@ -169,4 +171,9 @@ body::after {
     );
     pointer-events: none;
     z-index: 999;
+}
+
+/* Custom cursor styles */
+a, button, .terminal-btn {
+    cursor: url('/cursor.svg'), pointer;
 }
