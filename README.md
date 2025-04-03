@@ -39,6 +39,9 @@ Our docker build image is available both on the Github container registry AND th
 ## Links
 COMING SOON!!!
 
+## Issues
+If you need another link, [email me](mailto:namelessonbandlab@outlook.com). We refuse to be blocked by censors.
+
 ## License
 
 BSD 3-Clause
