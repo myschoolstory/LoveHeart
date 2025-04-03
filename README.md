@@ -9,6 +9,7 @@ A speeding proxy for bypassing internet censorship.
 -   Simple terminal-like interface
 -   Supports custom search engines
 -   Includes back, forward, reload, and close navigation buttons
+-   Confirmed bypass for most sites blocked by AT&T
 
 ## Usage
 
