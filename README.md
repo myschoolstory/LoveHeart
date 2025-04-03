@@ -1,6 +1,7 @@
 # LoveHeart
+![GitHub package.json version](https://img.shields.io/github/package-json/v/browser-vm/Loveheart) ![GitHub repo size](https://img.shields.io/github/repo-size/browser-vm/Loveheart)
 
-A speeding proxy for bypassing internet censorship.
+A speeding, lightweight proxy for bypassing internet censorship.
 
 ## Features
 
