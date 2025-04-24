@@ -7,7 +7,7 @@ body {
     font-family: 'Courier New', Courier, monospace;
     cursor: url('/cursor-default.svg'), auto;
 }
- 
+
 /* Disclaimer styling */
 .terminal-disclaimer {
     margin-top: 20px;
@@ -57,10 +57,12 @@ body {
 .terminal-title {
     font-size: 1.2em;
     text-shadow: 0 0 5px #00ff00;
+    animation: flicker 3s infinite;
 }
 
 .terminal-status {
     color: #00aa00;
+    animation: pulse 2s infinite;
 }
 
 /* Prompt styling */
@@ -188,4 +190,52 @@ a:hover, button:hover, .terminal-btn:hover, input[type="submit"]:hover,
 @keyframes cursor-pulse {
     0%, 100% { box-shadow: 0 0 5px #00ff00; }
     50% { box-shadow: 0 0 15px #00ff00; }
+}
+
+/* New loading message styles */
+.loading-message {
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    height: 24px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #00ff00;
+    animation: typing 3s steps(30, end) infinite, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    0% { width: 0 }
+    50% { width: 100% }
+    100% { width: 0 }
+}
+
+@keyframes blink-caret {
+    0%, 100% { border-color: #00ff00; }
+    50% { border-color: transparent; }
+}
+
+/* Flicker animation for terminal title */
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 5px #00ff00;
+    }
+    20%, 22%, 24%, 55% {
+        opacity: 0.4;
+        text-shadow: none;
+    }
+}
+
+/* Pulse animation for terminal status */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 5px #00aa00;
+    }
+    50% {
+        opacity: 0.6;
+        text-shadow: 0 0 20px #00ff00;
+    }
 }
