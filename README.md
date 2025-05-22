@@ -40,6 +40,9 @@ Our docker build image is available both on the Github container registry AND th
 ## Links
 COMING SOON!!!
 
+## Updates
+I'll post updates on the status of the proxy here every now and then. I am currently writing to inform you that we have been blocked by WCPSS. We are working on getting another permanent short link up, but it will take some time. 😢
+
 ## Releases
 There will be no official release for version 0.0.2. However, we are working on an update to make links one-use - so that if you have a pesky parent or heavy usage restriction protocols they can't access the link by checking their internet logs.
 
